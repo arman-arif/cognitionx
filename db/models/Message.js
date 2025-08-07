@@ -15,18 +15,16 @@ const messageSchema = new mongoose.Schema(
     contentType: {
       type: String,
       enum: ["text", "image", "file", "code", "markdown"],
-      required: [true, "Content Type is required"],
       default: "text",
     },
     conversation: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Conversation",
       required: [true, "Conversation reference is required"],
-      index: true,
     },
     sequence: {
       type: Number,
-      required: true,
+      default: 1,
     },
     metadata: {
       type: mongoose.Schema.Types.Mixed,

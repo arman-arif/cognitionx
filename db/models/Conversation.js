@@ -5,8 +5,8 @@ const conversationSchema = new mongoose.Schema(
     name: {
       type: String,
       required: [true, "Name is required"],
-      min: 2,
-      max: 100,
+      minlength: [2, "Name must be at least 2 characters"],
+      maxlength: [100, "Name cannot exceed 100 characters"],
     },
     model: {
       type: String,
